@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'ExtractArgumentsScreen.dart';
 import 'home.dart';
 
 void main() {
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget {
            primarySwatch: Colors.teal
       ),
       home: const MyHomePage(title: 'Navigation NamedRoute'),
-
+      routes: {
+          '/home': (BuildContext context) => const MyHomePage(title: "home"),
+          ExtractArgumentsScreen.routeName: (context) => const ExtractArgumentsScreen(),
+  },
     );
   }
 }
