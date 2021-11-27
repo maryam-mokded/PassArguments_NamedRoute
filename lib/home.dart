@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'ExtractArgumentsScreen.dart';
+import 'ScreenArguments.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -24,7 +25,20 @@ class MyHomePage extends StatelessWidget {
                 fontSize: 40,
                 color: Colors.teal
               ),
-            ),            
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  ExtractArgumentsScreen.routeName,
+                  arguments: ScreenArguments(
+                    'Extract Arguments Screen',
+                    'This message is extracted in the build method.',
+                  ),
+                );
+              },
+              child: const Text('Navigate to screen that extracts arguments'),
+            ),
           ],
         ),
       ),
