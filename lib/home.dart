@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'ExtractArgumentsScreen.dart';
 import 'ScreenArguments.dart';
+import 'PassArgumentsScreen.dart';
+
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -38,6 +40,20 @@ class MyHomePage extends StatelessWidget {
                 );
               },
               child: const Text('Navigate to screen that extracts arguments'),
+            ),
+             ElevatedButton(
+              onPressed: () {
+                  Navigator.pushNamed(
+                  context,
+                  PassArgumentsScreen.routeName,
+                  arguments: ScreenArguments(
+                    'Accept Arguments Screen',
+                    'This message is extracted in the onGenerateRoute '
+                        'function.',
+                  ),
+                );
+              },
+              child: const Text('Navigate to a named that accepts arguments'),
             ),
           ],
         ),
